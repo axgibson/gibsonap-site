@@ -1,0 +1,185 @@
+/* Base Styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #000000;
+  background-color: #ffffff;
+  padding-top: 80px; /* Space for fixed nav */
+}
+
+/* Header Styles */
+header {
+  background-color: #000000;
+  color: #ffbf00;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+header h1 {
+  font-family: Verdana, sans-serif;
+
+}
+
+/* Navigation Styles */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem 0;
+  border-bottom: 2px solid #ffbf00;
+  z-index: 1000;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #000000;
+  text-decoration: none;
+  position: relative;
+  font-weight: 600;
+  padding-bottom: 4px;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background-color: #ffbf00;
+  transition: width 0.3s ease-in-out;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Main Layout */
+main {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Reason Card Blocks */
+.reasons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.reason-card {
+  flex: 1;
+  min-width: 260px;
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-left: 5px solid #ffbf00;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.reason-card h3 {
+  color: #ffbf00;
+  margin-top: 0;
+}
+
+/* Call-to-Action Section */
+.cta {
+  background-color: #fff8e1;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.cta a {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #ffbf00;
+  color: #000000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+/* Responsive Nav */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Link Styling inside Cards */
+.card-content a {
+  color: #000000;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.avid-icon {
+  width: 26px;
+  height: 26px;
+  vertical-align: middle;
+  margin-left: 6px;
+}
+/* Dropdown Navigation */
+.dropdown {
+  position: relative;
+}
+
+.dropbtn {
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 200px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  text-decoration: none;
+  color: #000000;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.dropdown-content a:hover {
+  background-color: #ffefb0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+nav a:hover {
+  text-decoration: none;
+}
+.callout-box {
+  background-color: #f2f2f2;
+  border-left: 6px solid #ffbf00;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 6px;
+}
+

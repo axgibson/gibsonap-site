@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Adrian Xavier Gibson</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+    }
+    .card img {
+      width: 100%;
+      height: auto;
+      max-height: 400px;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+    .clickable {
+      cursor: zoom-in;
+    }
+    .clickable:hover {
+      transform: scale(1.03);
+    }
+    .card-content {
+      padding: 1rem;
+    }
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border: 5px solid white;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Adrian Xavier Gibson</h1>
+    <p>Assistant Principal Candidate | Camp Creek Middle School</p>
+  </header>
+  <nav>
+  <a href="index.html">Home</a>
+  <div class="dropdown">
+    <a href="about.html" class="dropbtn">About Me ▾</a>
+    <div class="dropdown-content">
+      <a href="leadership.html">Leadership Philosophy</a>
+      <a href="portfolio.html">Portfolio</a>
+    </div>
+  </div>
+  <a href="90day.html">90-Day Plan</a>
+  <a href="avidsystem.html">AVID: The System</a>
+</nav>
+  <main>
+    <h2>📂 Interactive Portfolio</h2>
+    <p>Each artifact below played a meaningful role in our school improvement efforts — whether through branding, culture-building, communication, or instructional support.</p>
+    <div class="grid">
+<div class="card">
+  <img src="Screenshot 2025-05-05 091122.png" alt="Canvas Staff Hub Design" class="clickable" onclick="openLightbox(this.src)">
+  <div class="card-content">
+    <h4>Canvas Staff Hub Design</h4>
+    <p>This hub centralizes all key documents, announcements, calendars, and PBIS links — modeling best practices in digital organization, WICOR integration, and consistent communication for teachers.</p>
+  </div>
+</div>
+
+      <div class="card">
+        <img src="August-Teacher-of-the-month.png" alt="August Teacher of the Month" class="non-clickable">
+        <div class="card-content">
+          <h4>Teacher of the Month Poster</h4>
+          <p>Helped build positive staff culture and recognize high-performing teachers with a public celebration of excellence.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="Fall-Dance-Poster-1.png" alt="Fall Dance Flyer" class="non-clickable">
+        <div class="card-content">
+          <h4>Fall Dance Promotion</h4>
+          <p>Boosted student engagement and supported PBIS incentive programming through fun, inclusive events.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="PBIS-Marix.png" alt="PBIS Matrix" class="clickable" onclick="openLightbox(this.src)">
+        <div class="card-content">
+          <h4>PBIS Behavior Matrix</h4>
+          <p>Clarified schoolwide expectations and aligned classroom behaviors with our PRIDE values to reinforce positive habits.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="PBIS Flowchart and Correction Menu_Page_1.png" alt="PBIS Flowchart" class="clickable" onclick="openLightbox(this.src)">
+        <div class="card-content">
+          <h4>PBIS Flowchart & Correction Menu</h4>
+          <p>Defined intervention steps for staff to address student behavior while promoting restorative, AVID-aligned practices.</p>
+          <a href="PBIS Flowchart and Correction Menu.pdf" target="_blank">View PDF version</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="CCMS-Letterhead.png" alt="Camp Creek Letterhead" class="clickable" onclick="openLightbox(this.src)">
+        <div class="card-content">
+          <h4>Camp Creek Letterhead</h4>
+          <p>Developed custom school branding to present a polished, professional image in all community communications.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="Ticket Front.png" alt="Fall Dance Ticket" class="non-clickable">
+        <div class="card-content">
+          <h4>Fall Dance Ticket</h4>
+          <p>Used for events, incentives, and tracking — this ticket design helped support organized and efficient student experiences.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <div id="lightbox" class="lightbox" onclick="this.style.display='none'">
+    <img id="lightbox-img" src="" alt="Expanded Artifact">
+  </div>
+  <script>
+    function openLightbox(src) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightboxImg.src = src;
+      lightbox.style.display = 'flex';
+    }
+  </script>
+</body>
+</html>
