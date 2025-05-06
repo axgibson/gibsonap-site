@@ -197,4 +197,9 @@ nav a:hover {
 .lightbox.show {
   display: flex;
 }
-
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border: 5px solid white;
+      border-radius: 8px;
+    }
