@@ -114,7 +114,9 @@ main {
     align-items: center;
   }
 }
-
+ body {
+    padding-top: 120px;
+  }
 /* Link Styling inside Cards */
 .card-content a {
   color: #000000;
