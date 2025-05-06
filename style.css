@@ -106,7 +106,13 @@ main {
   font-weight: bold;
   border-radius: 8px;
 }
-
+/* Desktop nav (default) */
+nav .nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
 /* Responsive Nav */
 @media (max-width: 768px) {
   nav {
