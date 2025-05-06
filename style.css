@@ -205,3 +205,62 @@ nav a:hover {
       border: 5px solid white;
       border-radius: 8px;
     }
+/* Base hamburger styles */
+nav .nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-bottom: 2px solid #ffbf00;
+  z-index: 1000;
+}
+
+nav .logo a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #000;
+}
+
+nav .hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+nav .nav-links {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  nav .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #ffffff;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    padding: 1rem 0;
+    border-top: 2px solid #ffbf00;
+  }
+
+  nav .nav-links a {
+    padding: 0.75rem 1rem;
+    text-align: center;
+  }
+
+  nav .hamburger {
+    display: block;
+  }
+
+  nav .nav-links.active {
+    display: flex;
+  }
+
+  body {
+    padding-top: 140px;
+  }
+}
