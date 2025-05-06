@@ -38,24 +38,6 @@
     .card-content {
       padding: 1rem;
     }
-    .lightbox {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.8);
-      justify-content: center;
-      align-items: center;
-    }
-    .lightbox img {
-      max-width: 90%;
-      max-height: 90%;
-      border: 5px solid white;
-      border-radius: 8px;
-    }
   </style>
 </head>
 <body>
@@ -136,12 +118,20 @@
     <img id="lightbox-img" src="" alt="Expanded Artifact">
   </div>
   <script>
-    function openLightbox(src) {
-      const lightbox = document.getElementById('lightbox');
-      const lightboxImg = document.getElementById('lightbox-img');
-      lightboxImg.src = src;
-      lightbox.style.display = 'flex';
+  function openLightbox(src) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    lightboxImg.src = src;
+    lightbox.classList.add('show');
+  }
+
+  // Close when clicked anywhere
+  document.addEventListener('click', function (e) {
+    const lightbox = document.getElementById('lightbox');
+    if (e.target.id === 'lightbox') {
+      lightbox.classList.remove('show');
     }
-  </script>
+  });
+</script>
 </body>
 </html>
