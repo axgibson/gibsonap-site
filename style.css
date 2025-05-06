@@ -1,10 +1,11 @@
+
 /* Base Styles */
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #000000;
   background-color: #ffffff;
-  padding-top: 80px; /* Space for fixed nav */
+  padding-top: 120px;
 }
 
 /* Header Styles */
@@ -17,10 +18,9 @@ header {
 
 header h1 {
   font-family: Verdana, sans-serif;
-
 }
 
-/* Navigation Styles */
+/* Navigation Wrapper */
 nav {
   position: fixed;
   top: 0;
@@ -31,6 +31,36 @@ nav {
   z-index: 1000;
 }
 
+/* Navigation Layout Container */
+nav .nav-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+nav .logo a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #000000;
+}
+
+/* Hamburger Icon (hidden on desktop) */
+nav .hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Navigation Links */
+nav .nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
 
 nav a {
   color: #000000;
@@ -55,82 +85,10 @@ nav a:hover::after {
   width: 100%;
 }
 
-/* Main Layout */
-main {
-  padding: 2rem;
-  max-width: 900px;
-  margin: auto;
-}
-
-/* Reason Card Blocks */
-.reasons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.reason-card {
-  flex: 1;
-  min-width: 260px;
-  background-color: #f9f9f9;
-  padding: 1rem;
-  border-left: 5px solid #ffbf00;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-.reason-card h3 {
-  color: #ffbf00;
-  margin-top: 0;
-}
-
-/* Call-to-Action Section */
-.cta {
-  background-color: #fff8e1;
-  padding: 2rem;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-.cta a {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.75rem 1.5rem;
-  background-color: #ffbf00;
-  color: #000000;
+nav a:hover {
   text-decoration: none;
-  font-weight: bold;
-  border-radius: 8px;
 }
-/* Desktop nav (default) */
-nav .nav-links {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-  justify-content: center;
-}
-/* Responsive Nav */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: center;
-  }
- body {
-    padding-top: 120px;
-  }
-}
-/* Link Styling inside Cards */
-.card-content a {
-  color: #000000;
-  font-weight: bold;
-  text-decoration: underline;
-}
-.avid-icon {
-  width: 26px;
-  height: 26px;
-  vertical-align: middle;
-  margin-left: 6px;
-}
+
 /* Dropdown Navigation */
 .dropdown {
   position: relative;
@@ -166,76 +124,8 @@ nav .nav-links {
 .dropdown:hover .dropdown-content {
   display: block;
 }
-a {
-  color: #000000;
-  text-decoration: none;
-  font-weight: bold;
-}
 
-a:hover {
-  text-decoration: underline;
-}
-nav a:hover {
-  text-decoration: none;
-}
-.callout-box {
-  background-color: #f2f2f2;
-  border-left: 6px solid #ffbf00;
-  padding: 1.5rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  border-radius: 6px;
-}
-.lightbox {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.8);
-  justify-content: center;
-  align-items: center;
-}
-.lightbox.show {
-  display: flex;
-}
-    .lightbox img {
-      max-width: 90%;
-      max-height: 90%;
-      border: 5px solid white;
-      border-radius: 8px;
-    }
-/* Base hamburger styles */
-nav .nav-container {
-  max-width: 1000px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-}
-
-nav .logo a {
-  font-weight: bold;
-  text-decoration: none;
-  color: #000;
-}
-
-nav .hamburger {
-  display: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-}
-
-nav .nav-links {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-  justify-content: center;
-}
-
+/* Responsive Navigation for Mobile */
 @media (max-width: 768px) {
   nav .nav-links {
     display: none;
@@ -249,6 +139,10 @@ nav .nav-links {
     border-top: 2px solid #ffbf00;
   }
 
+  nav .nav-links.active {
+    display: flex;
+  }
+
   nav .nav-links a {
     padding: 0.75rem 1rem;
     text-align: center;
@@ -258,11 +152,134 @@ nav .nav-links {
     display: block;
   }
 
-  nav .nav-links.active {
-    display: flex;
-  }
-
   body {
     padding-top: 140px;
   }
+}
+
+/* Force Desktop Layout for Nav on Larger Screens */
+@media (min-width: 769px) {
+  nav .hamburger {
+    display: none;
+  }
+
+  nav .nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  body {
+    padding-top: 120px;
+  }
+}
+
+/* Main Layout */
+main {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Call-to-Action Section */
+.cta {
+  background-color: #fff8e1;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.cta a {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #ffbf00;
+  color: #000000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+/* Reason Card Blocks */
+.reasons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.reason-card {
+  flex: 1;
+  min-width: 260px;
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-left: 5px solid #ffbf00;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.reason-card h3 {
+  color: #ffbf00;
+  margin-top: 0;
+}
+
+/* Lightbox Styles */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox.show {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border: 5px solid white;
+  border-radius: 8px;
+}
+
+/* AVID Icon */
+.avid-icon {
+  width: 26px;
+  height: 26px;
+  vertical-align: middle;
+  margin-left: 6px;
+}
+
+/* Callout Section */
+.callout-box {
+  background-color: #f2f2f2;
+  border-left: 6px solid #ffbf00;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 6px;
+}
+
+/* Card Link Styling */
+.card-content a {
+  color: #000000;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Default link styling */
+a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
 }
