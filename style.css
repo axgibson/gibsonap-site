@@ -69,6 +69,17 @@ nav a {
   font-weight: 600;
   padding-bottom: 4px;
 }
+nav a {
+  margin: 0 0.5rem;
+}
+
+nav a.active {
+  font-weight: normal;
+}
+
+nav a.active::after {
+  width: 0%;
+}
 
 nav a::after {
   content: '';
