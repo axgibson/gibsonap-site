@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About Me | Adrian Xavier Gibson</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
@@ -17,8 +18,7 @@
       <div class="logo">
         <a href="index.html">Adrian Xavier Gibson</a>
       </div>
-      <div class="hamburger" onclick="toggleMenu()">☰</div>
-      <div class="nav-links" id="navLinks">
+      <div class="nav-links">
         <a href="index.html">Home</a>
         <div class="dropdown">
           <a href="#" class="dropbtn" onclick="handleDropdownClick(event)">About Me ▾</a>
@@ -57,10 +57,6 @@
   </main>
 
   <script>
-    function toggleMenu() {
-      document.getElementById("navLinks").classList.toggle("active");
-    }
-
     function handleDropdownClick(e) {
       if (window.innerWidth <= 768) {
         e.preventDefault();
