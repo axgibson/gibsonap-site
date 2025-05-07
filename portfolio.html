@@ -38,6 +38,24 @@
     .card-content {
       padding: 1rem;
     }
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border: 5px solid white;
+      border-radius: 8px;
+    }
   </style>
 </head>
 <body>
@@ -45,39 +63,39 @@
     <h1>Adrian Xavier Gibson</h1>
     <p>Assistant Principal Candidate | Camp Creek Middle School</p>
   </header>
- <nav>
-  <div class="nav-container">
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
-    <div class="nav-links" id="navLinks">
-      <a href="index.html">Home</a>
-      <div class="dropdown">
-        <a href="about.html" class="dropbtn">About Me ▾</a>
-        <div class="dropdown-content">
-          <a href="leadership.html">Leadership Philosophy</a>
-          <a href="portfolio.html">Portfolio</a>
-        </div>
-      </div>
-      <a href="90day.html">90-Day Plan</a>
-      <a href="avidsystem.html">AVID: The System</a>
+  <nav>
+  <a href="index.html">Home</a>
+  <div class="dropdown">
+    <a href="about.html" class="dropbtn">About Me ▾</a>
+    <div class="dropdown-content">
+      <a href="leadership.html">Leadership Philosophy</a>
+      <a href="portfolio.html">Portfolio</a>
     </div>
   </div>
+  <a href="90day.html">90-Day Plan</a>
+  <a href="avidsystem.html">AVID: The System</a>
 </nav>
-
-
   <main>
     <h2>📂 Interactive Portfolio</h2>
     <p>Each artifact below played a meaningful role in our school improvement efforts — whether through branding, culture-building, communication, or instructional support.</p>
     <div class="grid">
+<div class="card">
+  <img src="Screenshot 2025-05-05 091122.png" alt="Canvas Staff Hub Design" class="clickable" onclick="openLightbox(this.src)">
+  <div class="card-content">
+    <h4>Canvas Staff Hub Design</h4>
+    <p>This hub centralizes all key documents, announcements, calendars, and PBIS links — modeling best practices in digital organization, WICOR integration, and consistent communication for teachers.</p>
+  </div>
+</div>
 
       <div class="card">
-        <img src="August-Teacher-of-the-month.png" alt="August Teacher of the Month" class="clickable" onclick="openLightbox(this.src)">
+        <img src="August-Teacher-of-the-month.png" alt="August Teacher of the Month" class="non-clickable">
         <div class="card-content">
           <h4>Teacher of the Month Poster</h4>
           <p>Helped build positive staff culture and recognize high-performing teachers with a public celebration of excellence.</p>
         </div>
       </div>
       <div class="card">
-        <img src="Fall-Dance-Poster-1.png" alt="Fall Dance Flyer" class="clickable" onclick="openLightbox(this.src)">
+        <img src="Fall-Dance-Poster-1.png" alt="Fall Dance Flyer" class="non-clickable">
         <div class="card-content">
           <h4>Fall Dance Promotion</h4>
           <p>Boosted student engagement and supported PBIS incentive programming through fun, inclusive events.</p>
@@ -106,7 +124,7 @@
         </div>
       </div>
       <div class="card">
-        <img src="Ticket Front.png" alt="Fall Dance Ticket" class="clickable" onclick="openLightbox(this.src)">
+        <img src="Ticket Front.png" alt="Fall Dance Ticket" class="non-clickable">
         <div class="card-content">
           <h4>Fall Dance Ticket</h4>
           <p>Used for events, incentives, and tracking — this ticket design helped support organized and efficient student experiences.</p>
@@ -118,26 +136,12 @@
     <img id="lightbox-img" src="" alt="Expanded Artifact">
   </div>
   <script>
-  function openLightbox(src) {
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    lightboxImg.src = src;
-    lightbox.classList.add('show');
-  }
-
-  // Close when clicked anywhere
-  document.addEventListener('click', function (e) {
-    const lightbox = document.getElementById('lightbox');
-    if (e.target.id === 'lightbox') {
-      lightbox.classList.remove('show');
+    function openLightbox(src) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightboxImg.src = src;
+      lightbox.style.display = 'flex';
     }
-  });
-</script>
-  <script>
-  function toggleMenu() {
-    const nav = document.getElementById("navLinks");
-    nav.classList.toggle("active");
-  }
-</script>
+  </script>
 </body>
 </html>
