@@ -182,4 +182,12 @@ nav a:hover {
   margin-bottom: 2rem;
   border-radius: 6px;
 }
+/* Default: hide dropdown */
+.dropdown-content {
+  display: none;
+}
 
+/* Show dropdown when active */
+.dropdown-content.show {
+  display: block;
+}
