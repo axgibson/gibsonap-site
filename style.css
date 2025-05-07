@@ -1,11 +1,10 @@
-
 /* Base Styles */
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #000000;
   background-color: #ffffff;
-  padding-top: 120px;
+  padding-top: 80px; /* Space for fixed nav */
 }
 
 /* Header Styles */
@@ -18,48 +17,23 @@ header {
 
 header h1 {
   font-family: Verdana, sans-serif;
+
 }
 
-/* Navigation Wrapper */
+/* Navigation Styles */
 nav {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem 0;
   border-bottom: 2px solid #ffbf00;
   z-index: 1000;
-}
-
-/* Navigation Layout Container */
-nav .nav-container {
-  max-width: 1000px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-}
-
-nav .logo a {
-  font-weight: bold;
-  text-decoration: none;
-  color: #000000;
-}
-
-/* Hamburger Icon (hidden on desktop) */
-nav .hamburger {
-  display: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-}
-
-/* Navigation Links */
-nav .nav-links {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-  justify-content: center;
+  flex-wrap: wrap;
 }
 
 nav a {
@@ -68,17 +42,6 @@ nav a {
   position: relative;
   font-weight: 600;
   padding-bottom: 4px;
-}
-nav a {
-  margin: 0 0.5rem;
-}
-
-nav a.active {
-  font-weight: normal;
-}
-
-nav a.active::after {
-  width: 0%;
 }
 
 nav a::after {
@@ -96,10 +59,74 @@ nav a:hover::after {
   width: 100%;
 }
 
-nav a:hover {
-  text-decoration: none;
+/* Main Layout */
+main {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
 }
 
+/* Reason Card Blocks */
+.reasons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.reason-card {
+  flex: 1;
+  min-width: 260px;
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-left: 5px solid #ffbf00;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.reason-card h3 {
+  color: #ffbf00;
+  margin-top: 0;
+}
+
+/* Call-to-Action Section */
+.cta {
+  background-color: #fff8e1;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.cta a {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #ffbf00;
+  color: #000000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+/* Responsive Nav */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Link Styling inside Cards */
+.card-content a {
+  color: #000000;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.avid-icon {
+  width: 26px;
+  height: 26px;
+  vertical-align: middle;
+  margin-left: 6px;
+}
 /* Dropdown Navigation */
 .dropdown {
   position: relative;
@@ -135,206 +162,6 @@ nav a:hover {
 .dropdown:hover .dropdown-content {
   display: block;
 }
-
-/* Responsive Navigation for Mobile */
-@media (max-width: 768px) {
-  nav .nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: #ffffff;
-    position: absolute;
-    top: 65px;
-    left: 0;
-    width: 100%;
-    padding: 1rem 0;
-    border-top: 2px solid #ffbf00;
-  }
-
-  nav .nav-links.active {
-    display: flex;
-  }
-
-  nav .nav-links a {
-    padding: 0.75rem 1rem;
-    text-align: center;
-  }
-
-  nav .hamburger {
-    display: block;
-  }
-
-  body {
-    padding-top: 140px;
-  }
-}
-
-/* Force Desktop Layout for Nav on Larger Screens */
-@media (min-width: 769px) {
-  /* Hide hamburger menu on desktop */
-  nav .hamburger {
-    display: none;
-  }
-
-  /* Center nav layout on desktop */
-  nav .nav-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-  }
-
-  nav .nav-links {
-    display: flex !important;
-    justify-content: center;
-    gap: 2rem;
-  }
-
-  /* Desktop dropdown */
-  .dropdown {
-    position: relative;
-  }
-
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    min-width: 200px;
-    z-index: 1001;
-  }
-
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-
-  .dropdown-content a {
-    display: block;
-    padding: 0.75rem 1rem;
-    text-align: left;
-    color: #000000;
-    text-decoration: none;
-    font-weight: 500;
-    white-space: nowrap;
-  }
-
-  .dropdown-content a:hover {
-    background-color: #ffefb0;
-  }
-
-  .dropbtn::after {
-    content: " ▾";
-    font-size: 0.7em;
-  }
-
-  body {
-    padding-top: 120px;
-  }
-}
-
-}
-
-/* Main Layout */
-main {
-  padding: 2rem;
-  max-width: 900px;
-  margin: auto;
-}
-
-/* Call-to-Action Section */
-.cta {
-  background-color: #fff8e1;
-  padding: 2rem;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-.cta a {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.75rem 1.5rem;
-  background-color: #ffbf00;
-  color: #000000;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 8px;
-}
-
-/* Reason Card Blocks */
-.reasons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.reason-card {
-  flex: 1;
-  min-width: 260px;
-  background-color: #f9f9f9;
-  padding: 1rem;
-  border-left: 5px solid #ffbf00;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-.reason-card h3 {
-  color: #ffbf00;
-  margin-top: 0;
-}
-
-/* Lightbox Styles */
-.lightbox {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.8);
-  justify-content: center;
-  align-items: center;
-}
-
-.lightbox.show {
-  display: flex;
-}
-
-.lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-  border: 5px solid white;
-  border-radius: 8px;
-}
-
-/* AVID Icon */
-.avid-icon {
-  width: 26px;
-  height: 26px;
-  vertical-align: middle;
-  margin-left: 6px;
-}
-
-/* Callout Section */
-.callout-box {
-  background-color: #f2f2f2;
-  border-left: 6px solid #ffbf00;
-  padding: 1.5rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  border-radius: 6px;
-}
-
-/* Card Link Styling */
-.card-content a {
-  color: #000000;
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-/* Default link styling */
 a {
   color: #000000;
   text-decoration: none;
@@ -343,4 +170,15 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+nav a:hover {
+  text-decoration: none;
+}
+.callout-box {
+  background-color: #f2f2f2;
+  border-left: 6px solid #ffbf00;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 6px;
 }
