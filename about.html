@@ -13,25 +13,25 @@
   </header>
 
   <nav>
-  <div class="nav-container">
-    <div class="logo">
-      <a href="index.html">Adrian Xavier Gibson</a>
-    </div>
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
-    <div class="nav-links" id="navLinks">
-      <a href="index.html">Home</a>
-      <div class="dropdown">
-        <a href="#" class="dropbtn" onclick="handleDropdownClick(event)">About Me ▾</a>
-        <div class="dropdown-content" id="dropdownMenu">
-          <a href="leadership.html">Leadership Philosophy</a>
-          <a href="portfolio.html">Portfolio</a>
-        </div>
+    <div class="nav-container">
+      <div class="logo">
+        <a href="index.html">Adrian Xavier Gibson</a>
       </div>
-      <a href="90day.html">90-Day Plan</a>
-      <a href="avid.html">AVID: The System</a>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+          <a href="#" class="dropbtn" onclick="handleDropdownClick(event)">About Me ▾</a>
+          <div class="dropdown-content" id="dropdownMenu">
+            <a href="leadership.html">Leadership Philosophy</a>
+            <a href="portfolio.html">Portfolio</a>
+          </div>
+        </div>
+        <a href="90day.html">90-Day Plan</a>
+        <a href="avid.html">AVID: The System</a>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
   <main>
     <h2>👋 About Me</h2>
@@ -42,9 +42,6 @@
       I currently serve as Administrative Assistant and am ready to step into the Assistant Principal role with confidence, vision, and a relentless focus on outcomes. Whether I’m leading Canvas implementation, supporting restorative practices, or celebrating our amazing teachers — I do it with purpose, clarity, and heart.
     </p>
 
-    <!-- Optional headshot -->
-    <!-- <img src="headshot.jpg" alt="Adrian Gibson headshot" style="max-width: 200px; border-radius: 8px;"> -->
-
     <h3>📂 Quick Access</h3>
     <ul>
       <li><a href="leadership.html">Leadership Philosophy</a></li>
@@ -52,68 +49,24 @@
     </ul>
 
     <h3>📎 Supporting Documents</h3>
-<p>Below are links to my resume and recommendation letters that speak to my leadership, professionalism, and impact as an educator.</p>
-
-<ul>
-  <li>📄 <a href="Adrian_Gibson_Resume.pdf" download>Résumé</a></li>
-  <li>📝 <a href="Adrian Gibson Recommendatioin Dr_Mustifa.pdf" download>Recommendation Dr. Shelia Venable Mustifa</a></li>
- </ul>
+    <p>Below are links to my resume and recommendation letters that speak to my leadership, professionalism, and impact as an educator.</p>
+    <ul>
+      <li>📄 <a href="Adrian_Gibson_Resume.pdf" download>Résumé</a></li>
+      <li>📝 <a href="Adrian Gibson Recommendatioin Dr_Mustifa.pdf" download>Recommendation Dr. Shelia Venable Mustifa</a></li>
+    </ul>
   </main>
-  <script>
-  function toggleDropdown(event) {
-    event.preventDefault(); // Prevent link navigation
-    const dropdown = document.getElementById("aboutDropdown");
-    dropdown.classList.toggle("show");
-  }
 
-  // Optional: close dropdown if clicking outside
-  window.onclick = function(e) {
-    if (!e.target.matches('.dropbtn')) {
-      const openDropdown = document.getElementById("aboutDropdown");
-      if (openDropdown && openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
     }
-  }
-  </script>
-  <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const dropdown = document.querySelector('.dropdown');
-    const dropLink = dropdown.querySelector('.dropbtn');
 
-    let tappedOnce = false;
-
-    dropLink.addEventListener('click', function (e) {
-      const isMobile = window.innerWidth <= 768;
-
-      if (isMobile && !tappedOnce) {
+    function handleDropdownClick(e) {
+      if (window.innerWidth <= 768) {
         e.preventDefault();
-        tappedOnce = true;
-        dropdown.querySelector('.dropdown-content').style.display = 'block';
-
-        // Hide dropdown if user taps elsewhere
-        document.addEventListener('click', function handler(event) {
-          if (!dropdown.contains(event.target)) {
-            dropdown.querySelector('.dropdown-content').style.display = 'none';
-            tappedOnce = false;
-            document.removeEventListener('click', handler);
-          }
-        });
+        document.getElementById("dropdownMenu").classList.toggle("show");
       }
-    });
-  });
-</script>
-  <script>
-  function toggleMenu() {
-    document.getElementById("navLinks").classList.toggle("active");
-  }
-
-  function handleDropdownClick(e) {
-    if (window.innerWidth <= 768) {
-      e.preventDefault();
-      document.getElementById("dropdownMenu").classList.toggle("show");
     }
-  }
-</script>
+  </script>
 </body>
 </html>
