@@ -66,5 +66,22 @@
       My leadership aligns closely with AVID’s core principles. WICOR strategies, student agency, and college/career readiness aren’t just buzzwords — they’re foundational practices I embed in every initiative, from instructional planning to student discipline.
     </p>
   </main>
+  <script>
+  function toggleDropdown(event) {
+    event.preventDefault(); // Prevent link navigation
+    const dropdown = document.getElementById("aboutDropdown");
+    dropdown.classList.toggle("show");
+  }
+
+  // Optional: close dropdown if clicking outside
+  window.onclick = function(e) {
+    if (!e.target.matches('.dropbtn')) {
+      const openDropdown = document.getElementById("aboutDropdown");
+      if (openDropdown && openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+</script>
 </body>
 </html>
