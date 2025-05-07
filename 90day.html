@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>90-Day Plan | Adrian Xavier Gibson</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .accordion-section {
+      margin-bottom: 2rem;
+    }
+
+    .accordion {
+      background-color: #ffbf00;
+      color: black;
+      cursor: pointer;
+      padding: 1rem;
+      width: 100%;
+      border: none;
+      text-align: left;
+      font-size: 1.1rem;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .accordion:hover {
+      background-color: #e6ac00;
+    }
+
+    .chevron {
+      font-size: 1.2rem;
+      transition: transform 0.3s ease;
+    }
+
+    .accordion.active .chevron {
+      transform: rotate(90deg);
+    }
+
+    .panel {
+      padding: 0 1rem;
+      background-color: #f9f9f9;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      border: 1px solid #ddd;
+      border-top: none;
+    }
+
+    .panel p {
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Adrian Xavier Gibson</h1>
+    <p>Assistant Principal Candidate | Camp Creek Middle School</p>
+  </header>
+  <nav>
+    <div class="nav-container">
+      <div class="logo">
+        <a href="index.html">Adrian Xavier Gibson</a>
+      </div>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+          <a href="#" class="dropbtn">About Me ▾</a>
+          <div class="dropdown-content" id="dropdownMenu">
+            <a href="leadership.html">Leadership Philosophy</a>
+            <a href="portfolio.html">Portfolio</a>
+          </div>
+        </div>
+        <a href="90day.html" class="active">90-Day Plan</a>
+        <a href="avid.html">AVID: The System</a>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <h2>📅 My 90-Day Action Plan</h2>
+    <p>This plan outlines my immediate leadership priorities to support Camp Creek Middle School through intentional, AVID-aligned systems that improve instruction, culture, and student achievement.</p>
+
+    <!-- EXAMPLE GOAL SECTION -->
+    <div class="accordion-section">
+      <h3>🎯 Goal 1: Universal Classroom Systems</h3>
+      <p><strong>SMART Goal:</strong> By October 4, 2025, 100% of classrooms will implement clear systems aligned to Camp Creek’s Universal Expectations, as measured by classroom walkthrough tools and feedback forms.</p>
+
+      <button class="accordion">
+        <span class="accordion-label">Phase 1: Define & Communicate Expectations</span>
+        <span class="chevron">▸</span>
+      </button>
+      <div class="panel">
+        <p>- Redeliver universal expectations to staff during pre-planning</p>
+        <p>- Provide visual tools (e.g., posters, slide decks) for classroom implementation</p>
+        <p>- Ensure alignment with PRIDE and AVID schoolwide culture</p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+
+    function handleDropdownClick(e) {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        document.getElementById("dropdownMenu").classList.toggle("show");
+      }
+    }
+
+    const accordions = document.querySelectorAll(".accordion");
+
+    accordions.forEach((acc) => {
+      acc.addEventListener("click", function () {
+        const panel = this.nextElementSibling;
+        const chevron = this.querySelector(".chevron");
+
+        this.classList.toggle("active");
+
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+          if (chevron) chevron.textContent = "▸";
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+          if (chevron) chevron.textContent = "▼";
+        }
+      });
+    });
+  </script>
+</body>
+</html>
