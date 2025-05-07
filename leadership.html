@@ -83,5 +83,32 @@
     }
   }
 </script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const dropdown = document.querySelector('.dropdown');
+    const dropLink = dropdown.querySelector('.dropbtn');
+
+    let tappedOnce = false;
+
+    dropLink.addEventListener('click', function (e) {
+      const isMobile = window.innerWidth <= 768;
+
+      if (isMobile && !tappedOnce) {
+        e.preventDefault();
+        tappedOnce = true;
+        dropdown.querySelector('.dropdown-content').style.display = 'block';
+
+        // Hide dropdown if user taps elsewhere
+        document.addEventListener('click', function handler(event) {
+          if (!dropdown.contains(event.target)) {
+            dropdown.querySelector('.dropdown-content').style.display = 'none';
+            tappedOnce = false;
+            document.removeEventListener('click', handler);
+          }
+        });
+      }
+    });
+  });
+</script>
 </body>
 </html>
