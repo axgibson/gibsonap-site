@@ -82,5 +82,22 @@
       Every goal in my 90-Day Action Plan is aligned to AVID — from implementing Universal Classroom Systems to training teachers in Canvas through WICOR-aligned templates. AVID isn’t an add-on — it is the system.
     </p>
   </main>
+  <script>
+  function toggleDropdown(event) {
+    event.preventDefault(); // Prevent link navigation
+    const dropdown = document.getElementById("aboutDropdown");
+    dropdown.classList.toggle("show");
+  }
+
+  // Optional: close dropdown if clicking outside
+  window.onclick = function(e) {
+    if (!e.target.matches('.dropbtn')) {
+      const openDropdown = document.getElementById("aboutDropdown");
+      if (openDropdown && openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+</script>
 </body>
 </html>
