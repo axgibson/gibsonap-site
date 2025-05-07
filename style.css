@@ -170,20 +170,69 @@ nav a:hover {
 
 /* Force Desktop Layout for Nav on Larger Screens */
 @media (min-width: 769px) {
+  /* Hide hamburger menu on desktop */
   nav .hamburger {
     display: none;
   }
 
-  nav .nav-links {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
+  /* Center nav layout on desktop */
+  nav .nav-container {
+    max-width: 1000px;
+    margin: 0 auto;
     justify-content: center;
+    gap: 2rem;
+  }
+
+  nav .nav-links {
+    display: flex !important;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  /* Desktop dropdown */
+  .dropdown {
+    position: relative;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    z-index: 1001;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content a {
+    display: block;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    color: #000000;
+    text-decoration: none;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #ffefb0;
+  }
+
+  .dropbtn::after {
+    content: " ▾";
+    font-size: 0.7em;
   }
 
   body {
     padding-top: 120px;
   }
+}
+
 }
 
 /* Main Layout */
