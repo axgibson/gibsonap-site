@@ -13,17 +13,25 @@
   </header>
 
   <nav>
-    <a href="index.html">Home</a>
-    <div class="dropdown">
-  <a href="#" class="dropbtn" onclick="toggleDropdown(event)">About Me</a>
-  <div class="dropdown-content" id="aboutDropdown">
-    <a href="leadership.html">Leadership Philosophy</a>
-    <a href="portfolio.html">Portfolio</a>
+  <div class="nav-container">
+    <div class="logo">
+      <a href="index.html">Adrian Xavier Gibson</a>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <div class="dropdown">
+        <a href="#" class="dropbtn" onclick="handleDropdownClick(event)">About Me ▾</a>
+        <div class="dropdown-content" id="dropdownMenu">
+          <a href="leadership.html">Leadership Philosophy</a>
+          <a href="portfolio.html">Portfolio</a>
+        </div>
+      </div>
+      <a href="90day.html">90-Day Plan</a>
+      <a href="avid.html">AVID: The System</a>
+    </div>
   </div>
-</div>
-    <a href="90day.html">90-Day Plan</a>
-    <a href="avidsystem.html">AVID: The System</a>
-  </nav>
+</nav>
 
   <main>
     <h2>👋 About Me</h2>
@@ -94,6 +102,18 @@
       }
     });
   });
+</script>
+  <script>
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+  }
+
+  function handleDropdownClick(e) {
+    if (window.innerWidth <= 768) {
+      e.preventDefault();
+      document.getElementById("dropdownMenu").classList.toggle("show");
+    }
+  }
 </script>
 </body>
 </html>
