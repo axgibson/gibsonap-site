@@ -6,6 +6,13 @@ body {
   color: #000000;
   background-color: #ffffff;
   padding-top: 80px; /* Default padding for fixed nav */
+
+  background-image: url('Shield-to-Send-Font-1.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 600px auto;
+  background-attachment: fixed;
+  background-blend-mode: lighten;
   
 }
 /* Header Styles */
@@ -190,12 +197,4 @@ nav a:hover {
   margin-top: 2rem;
   margin-bottom: 2rem;
   border-radius: 6px;
-}
-body {
-  background-image: url('Shield-to-Send-Font-1.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 600px auto;
-  background-attachment: fixed;
-  background-blend-mode: lighten;
 }
