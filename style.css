@@ -9,7 +9,7 @@ body {
 
   background-image: url('Shield-to-Send-Font-1.png');
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: 50% 25%;
   background-size: 600px auto;
   background-attachment: fixed;
   background-blend-mode: lighten;
