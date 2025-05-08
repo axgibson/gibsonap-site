@@ -6,6 +6,9 @@ body {
   color: #000000;
   background-color: #ffffff;
   padding-top: 80px; /* Default padding for fixed nav */
+  
+}
+body {
   background-image: url('Shield-to-Send-Font-1.png');
   background-repeat: no-repeat;
   background-position: center;
@@ -13,7 +16,6 @@ body {
   background-attachment: fixed;
   opacity: 0.25;
 }
-
 /* Header Styles */
 header {
   background-color: #000000;
