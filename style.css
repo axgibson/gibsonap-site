@@ -191,3 +191,11 @@ nav a:hover {
   margin-bottom: 2rem;
   border-radius: 6px;
 }
+body {
+  background-image: url('Shield-to-Send-Font-1.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 300px auto;
+  background-attachment: fixed;
+  opacity: 0.05;
+}
