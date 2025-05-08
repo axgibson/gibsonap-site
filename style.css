@@ -14,7 +14,7 @@ body {
   background-position: center;
   background-size: 600px auto;
   background-attachment: fixed;
-  opacity: 0.05;
+  background-blend-mode: lighten;
 }
 /* Header Styles */
 header {
