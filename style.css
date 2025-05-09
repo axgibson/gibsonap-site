@@ -191,25 +191,3 @@ nav a:hover {
   margin-bottom: 2rem;
   border-radius: 6px;
 }
-/* Watermark background image */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-image: url('Shield-to-Send-Font-1.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 60%;
-  opacity: 0.05;
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* Ensure all content appears above the watermark */
-main, header, footer, section, nav, .content {
-  position: relative;
-  z-index: 1;
-}
