@@ -2,7 +2,7 @@
 /* Base Styles */
 body {
   margin: 0;
-  font-family: Verdana, Geneva, sans-serif;
+  font-family: 'Verdana', Geneva, sans-serif;
   color: #000000;
   background-color: #ffffff;
   padding-top: 80px; /* Default padding for fixed nav */
