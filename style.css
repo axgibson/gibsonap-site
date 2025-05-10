@@ -191,14 +191,3 @@ nav a:hover {
   margin-bottom: 2rem;
   border-radius: 6px;
 }
-.school-crest {
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  width: 8vw;              /* Responsive to screen width */
-  max-width: 100px;        /* Prevents it from getting too large on big screens */
-  height: auto;
-  opacity: 0.7;            /* Slight transparency, optional */
-  z-index: 1000;           /* Ensures it stays above other elements */
-  pointer-events: none;    /* Prevents it from interfering with clicks */
-}
